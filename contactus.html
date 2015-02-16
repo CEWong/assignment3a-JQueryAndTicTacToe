@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<! Carissa Wong>
+<! 1/21/2015>
+
+<html>
+<head>
+	<title> Contact Us </title>
+	<link rel= "stylesheet" type="text/css" href="assignment3.css">
+	<script type ="text/javascript">
+function validateForm() {
+    var x = document.forms["contactForm"]["playerEmail"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address!");
+        return false;
+    }
+    if(document.forms["contactForm"]["comments"].value=="" || document.forms["regForm"]["comments"].value==null){
+    	alert("Must leave a comment!!");
+        return false;
+    }
+}
+	</script>
+</head>
+
+<body>
+<div class="links">
+	<ul class="linkItems">
+		<li><a href= "index.html"> Welcome </a></li>
+		<li><a href= "tictactoe.html"> Tic Tac Toe </a></li>
+		<li><a href= "faq.html"> FAQ </a></li>
+		<li><a href= "registrationform.html"> Registration Form </a></li>
+		<li><a href= "contactus.html"> Contact Us </a></li>
+	</ul>
+</div>
+
+<h1>Contact Us</h1>
+
+<div class="container">
+<div class="main">
+<form class="form" name="contactForm">
+	<label>Name :</label>
+	<input type="text" name="playerName" id="name">
+	<label>E-mail :</label>
+	<input type="text" name="playerEmail" id="email"><br>
+	<label>Comment:</label><br>
+	<textarea name="comments" rows="15" cols="60"></textarea>
+	<input type="submit" name="submit" id="submit" value="Submit" onclick="validateForm()">
+</form>
+</div>
+</div>
+
+</body>
+</html>

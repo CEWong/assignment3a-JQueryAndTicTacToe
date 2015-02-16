@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<! Carissa Wong>
+<! 1/21/2015>
+
+<html>
+<head>
+<title>
+ Registration Form </title>
+ 	<link rel= "stylesheet" type="text/css" href="assignment3.css">
+	<script type ="text/javascript">
+function validateForm() {
+    var x = document.forms["regForm"]["playerEmail"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address!");
+        return false;
+    }
+    if(document.forms["regForm"]["userName"].value=="" || document.forms["regForm"]["userName"].value==null){
+    	alert("Please fill in all fields.");
+        return false;
+    }
+	if(document.forms["regForm"]["lName"].value=="" || document.forms["regForm"]["lName"].value==null){
+    	alert("Please fill in all fields.");
+        return false;
+    }
+	if(document.forms["regForm"]["fName"].value=="" || document.forms["regForm"]["fName"].value==null){
+    	alert("Please fill in all fields.");
+        return false;
+    }
+	if(document.forms["regForm"]["password"].value=="" || document.forms["regForm"]["password"].value==null){
+    	alert("Please fill in all fields.");
+        return false;
+    }
+}
+	</script>
+</head>
+
+<body>
+<div class="links">
+	<ul class="linkItems">
+		<li><a href= "index.html"> Welcome </a></li>
+		<li><a href= "tictactoe.html"> Tic Tac Toe </a></li>
+		<li><a href= "faq.html"> FAQ </a></li>
+		<li><a href= "registrationform.html"> Registration Form </a></li>
+		<li><a href= "contactus.html"> Contact Us </a></li>
+	</ul>
+</div>
+
+<h1>Tic Tac Toe Registration Form</h1>
+
+<div class="container">
+<div class="main">
+<form class="form" name="regForm" method="post" action="#">
+
+<label>User Name :</label>
+<input type="text" name="userName" id="name"><br>
+<label>First Name :</label>
+<input type="text" name="fName" id="firstname"><br>
+<label>Last Name :</label>
+<input type="text" name="lName" id="lastname"><br>
+<label>E-mail :</label>
+<input type="text" name="playerEmail" id="email"><br>
+<label>Password :</label>
+<input type="password" name="password" id="password"><br>
+<input type="button" name="register" id="register" value="Register" onclick="validateForm()">
+</form>
+</div>
+
+</body>
+</html>
